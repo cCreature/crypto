@@ -1,5 +1,3 @@
-package crypto1;
-
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.Arrays;

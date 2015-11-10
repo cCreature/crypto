@@ -1,16 +1,13 @@
-package crypto1;
-
 import java.io.File;
 import java.util.Scanner;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
+//Ja wiem ,ze ludzie mysla, ze jestem krejzi dziewucha z psami. W Kalifornii psy to sa dzieci ludzi. Wszystkie celebrities maja psy.
+
 public class RC4 {
 	public RC4() throws Exception {
-		//72200b70ab0c9c11
-		//Ja wiem ,ze ludzie mysla, ze jestem krejzi dziewucha z psami. W Kalifornii psy to sa dzieci ludzi. Wszystkie celebrities maja psy.
-		
 		File file = new File("daneRC4.txt");
 		Scanner scanner = new Scanner(file);
 		String dane = scanner.useDelimiter("\\A").next();
@@ -33,9 +30,10 @@ public class RC4 {
 		String U = "";
 		String I = "";
 		
-		for (int q = 7; q < 16; q++) {
-			for (int w = 2; w < 16; w++) {
-				for (int e = 2; e < 16; e++) {
+		for (int q = 0; q < 16; q++) {
+			//System.out.println(q);
+			for (int w = 0; w < 16; w++) {
+				for (int e = 0; e < 16; e++) {
 					for (int r = 0; r < 16; r++) {
 						for (int t = 0; t < 16; t++) {
 							for (int y = 0; y < 16; y++) {
@@ -50,7 +48,7 @@ public class RC4 {
 										U = Integer.toHexString(u);
 										I = Integer.toHexString(i);
 										
-										String key = Q+W+E+R+T+Y+U+I+"ab0c9c11";
+										String key = Q+W+E+R+T+Y+U+I+"dfef80c8";
 										
 										SecretKeySpec rc4Key = new SecretKeySpec(key.getBytes("ASCII"), "RC4");
 										Cipher rc4Decrypt = Cipher.getInstance("RC4");
